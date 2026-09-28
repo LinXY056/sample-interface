@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tv-black: #131722;
+  --color-tv-gray: #787b86;
+  --color-tv-lightGray: #f0f3fa;
+  --color-tv-border: #e0e3eb;
+  --color-tv-green: #089981;
+  --color-tv-greenHover: #067a67;
+  --color-tv-red: #f23645;
+  --color-tv-redHover: #cc2634;
+  --color-tv-blue: #2962ff;
+  --color-tv-blueHover: #1e53e5;
+  --color-tv-darkBg: #0f141c;
+  --color-tv-hoverBg: #f8f9fd;
+  --color-tv-badgeBg: #eef2f9;
+}
+
+@layer base {
+  body {
+    color: #131722;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
+  }
+}
+
+/* Subtle scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #f0f3fa;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #c1c8d6;
+  border-radius: 9999px;
+}
+
+/* TradingView distinctive gradient button */
+.tv-btn-gradient {
+  background: linear-gradient(90deg, #0052ff 0%, #8522ff 100%);
+  transition: opacity 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+.tv-btn-gradient:hover {
+  opacity: 0.94;
+  box-shadow: 0 4px 12px rgba(41, 98, 255, 0.28);
+}
+.tv-btn-gradient:active {
+  transform: scale(0.98);
+}
+
+/* Flash animation for live price updates */
+@keyframes tvFlashGreen {
+  0% { background-color: rgba(8, 153, 129, 0.25); color: #089981; }
+  100% { background-color: transparent; }
+}
+
+@keyframes tvFlashRed {
+  0% { background-color: rgba(242, 54, 69, 0.25); color: #f23645; }
+  100% { background-color: transparent; }
+}
+
+.flash-green {
+  animation: tvFlashGreen 1.2s ease-out;
+}
+
+.flash-red {
+  animation: tvFlashRed 1.2s ease-out;
+}

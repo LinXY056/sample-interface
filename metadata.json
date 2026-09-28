@@ -1,0 +1,6 @@
+{
+  "name": "TradingView Markets Everywhere",
+  "description": "Real-time financial quotes, global indices, equities, crypto, futures, and interactive macroeconomic analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
